@@ -110,7 +110,8 @@ export default function Home() {
 
               <Card className="h-[400px]">
                 <CardHeader>
-                  <CardTitle>Gender Breakdown</CardTitle>
+                  <CardTitle>Gender Breakdown ooo
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="flex items-center justify-center h-[300px] text-zinc-400 border-2 border-dashed m-4 rounded-lg">
                   [Pie Chart Placeholder]
