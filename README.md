@@ -1,4 +1,3 @@
-Markdown
 
 # 🏥 ANZHFR Cohort Builder (Task 2)
 
@@ -20,9 +19,9 @@ Markdown
 
 ---
 
-## 🚀 队友快速上手指南 (Quick Start)
+## Quick Start
 
-**请严格按照以下步骤操作，不要自己新建项目！**
+**请严格按照以下步骤操作**
 
 ### 1. 准备环境
 确保你的电脑安装了 **Node.js 18+**。
