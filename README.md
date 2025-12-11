@@ -1,58 +1,73 @@
+Here is a polished, natural English version of your content — suitable for GitHub, documentation, or submission:
 
-# 🏥 ANZHFR Cohort Builder (Task 2)
+⸻
 
-**Datathon 2025** | Task 2: The ANZHFR Cohort Builder
+🏥 ANZHFR Cohort Builder (Task 2)
 
-这是一个基于 **Next.js 15** 构建的交互式队列构建器，专为 Datathon Task 2 设计。它允许临床医生对髋部骨折患者数据进行筛选、可视化和队列对比。
+Datathon 2025 | Task 2: ANZHFR Cohort Builder
 
----
+This is an interactive cohort-building tool built with Next.js 15, designed specifically for Datathon Task 2. It allows clinicians to filter, visualize, and compare hip-fracture patient cohorts.
 
-## 🛠️ 技术栈 (Tech Stack)
+⸻
 
-不用担心配置，所有环境都已经集成在 `package.json` 中：
+🛠️ Tech Stack
 
-- **Core**: [Next.js 15](https://nextjs.org) (App Router) + TypeScript
-- **Styling**: [Tailwind CSS](https://tailwindcss.com) + [Shadcn UI](https://ui.shadcn.com) (Zinc Theme)
-- **Charts**: [Recharts](https://recharts.org) (用于饼图、直方图)
-- **Data**: [PapaParse](https://www.papaparse.com) (CSV 解析) + [Zustand](https://docs.pmnd.rs/zustand) (状态管理)
-- **AI**: Google Gemini SDK (自然语言筛选辅助)
+No setup worries — everything is pre-configured inside package.json:
+	•	Core: Next.js 15￼ (App Router) + TypeScript
+	•	Styling: Tailwind CSS￼ + Shadcn UI￼ (Zinc Theme)
+	•	Charts: Recharts￼ for pie charts and histograms
+	•	Data: PapaParse￼ for CSV parsing + Zustand￼ for state management
+	•	AI: Google Gemini SDK for natural-language filtering assistance
 
----
+⸻
 
-## Quick Start
+🚀 Quick Start
 
-**请严格按照以下步骤操作**
+Please follow these steps carefully.
 
-### 1. 准备环境
-确保你的电脑安装了 **Node.js 18+**。
-我们统一使用 `pnpm` 包管理器（比 npm 快且省空间）：
-```bash
-# 如果没装过 pnpm，请运行：
+1. Prepare your environment
+
+Make sure your computer has Node.js 18+ installed.
+We use pnpm as the package manager (faster and more space-efficient than npm):
+
+# If you don’t have pnpm installed:
 npm install -g pnpm
-2. 克隆项目 & 安装依赖
-不要重新运行 create-next-app，直接拉取代码并安装即可还原我的环境：
 
-Bash
 
-# 1. 克隆仓库
-git clone [这里换成你的GitHub仓库地址.git]
+⸻
 
-# 2. 进入目录
+2. Clone the repo & install dependencies
+
+Do not run create-next-app again.
+Simply pull the project and install everything to fully restore the environment.
+
+# 1. Clone the repository
+git clone [replace-with-your-GitHub-repo.git]
+
+# 2. Enter the project directory
 cd anzhfr-cohort-builder
 
-# 3. 一键安装所有依赖 (Next.js, Tailwind, Shadcn, Recharts 等全都在这)
+# 3. Install all dependencies (Next.js, Tailwind, Shadcn, Recharts, etc.)
 pnpm install
-3. 放置数据文件 (关键步骤 ⚠️)
-Datathon 官方提供的 CSV 数据文件无法上传到 GitHub（隐私/大小限制）。
 
-获取官方 CSV 文件。
 
-将其重命名为 data.csv。
+⸻
 
-放入项目的 public/ 文件夹中。 (代码已配置为从 /data.csv 读取数据)
+3. Add the dataset (important ⚠️)
 
-4. 启动项目
-Bash
+The official Datathon CSV cannot be uploaded to GitHub due to privacy and size restrictions.
+	1.	Obtain the official CSV dataset.
+	2.	Rename it to data.csv.
+	3.	Place it inside the public/ folder.
+
+The project is already configured to load data from /data.csv.
+
+⸻
+
+4. Start the project
 
 pnpm run dev
-打开浏览器访问 http://localhost:3000 即可看到 Dashboard。
+
+Open http://localhost:3000 in your browser to access the dashboard.
+
+⸻
