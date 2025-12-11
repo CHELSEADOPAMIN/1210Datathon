@@ -1,6 +1,4 @@
-Here is a polished, natural English version of your content — suitable for GitHub, documentation, or submission:
 
-⸻
 
 🏥 ANZHFR Cohort Builder (Task 2)
 
