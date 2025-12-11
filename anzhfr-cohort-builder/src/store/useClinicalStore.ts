@@ -1,29 +1,29 @@
 import { create } from 'zustand'
 
 // Define the keys that store array of strings for categorical filters
-type ClinicalArrayKeys = 
-  | 'selectedFractureTypes' 
-  | 'selectedDelayReasons' 
-  | 'selectedASAGrades' 
-  | 'selectedPatientTypes' 
+type ClinicalArrayKeys =
+  | 'selectedFractureTypes'
+  | 'selectedDelayReasons'
+  | 'selectedASAGrades'
+  | 'selectedPatientTypes'
   | 'selectedFrailtyScores'
 
 interface ClinicalState {
   // 1. Fracture Type (ftype): '1'-'4'
   selectedFractureTypes: string[]
-  
+
   // 2. Surgery Delay Reason (delay): '1'-'7'
   selectedDelayReasons: string[]
-  
+
   // 3. ASA Grades (asa): '1'-'5'
   selectedASAGrades: string[]
-  
+
   // 4. Patient Type (ptype): '1'-'3'
   selectedPatientTypes: string[]
-  
+
   // 5. Clinical Frailty Scale (frailty/cfs): '1'-'10'
   selectedFrailtyScores: string[]
-  
+
   // Hospital Settings
   selectedHospital: string | null
 

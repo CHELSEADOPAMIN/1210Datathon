@@ -1,10 +1,5 @@
 "use client"
 
-import * as React from "react"
-import { Label } from "@/components/ui/label"
-import { useClinicalStore } from "@/store/useClinicalStore"
-import { Check, ChevronsUpDown } from "lucide-react"
-import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
   Command,
@@ -14,20 +9,25 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command"
+import { Label } from "@/components/ui/label"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import { cn } from "@/lib/utils"
+import { useClinicalStore } from "@/store/useClinicalStore"
+import { Check, ChevronsUpDown } from "lucide-react"
+import * as React from "react"
 
 export function AdminFilter() {
-  const { 
-    selectedPatientTypes, 
+  const {
+    selectedPatientTypes,
     toggleCategoricalFilter,
     selectedHospital,
     setHospital
   } = useClinicalStore()
-  
+
   const [open, setOpen] = React.useState(false)
 
   // Patient Types
@@ -48,7 +48,7 @@ export function AdminFilter() {
 
   return (
     <div className="space-y-6">
-      
+
       {/* Patient Type - Segmented Control Style */}
       <div className="space-y-3">
         <Label className="text-sm font-medium">Patient Type</Label>
@@ -57,15 +57,15 @@ export function AdminFilter() {
             const isSelected = selectedPatientTypes.includes(type.id)
             const isFirst = index === 0
             const isLast = index === patientTypes.length - 1
-            
+
             return (
               <button
                 key={type.id}
                 onClick={() => toggleCategoricalFilter('selectedPatientTypes', type.id)}
                 className={cn(
                   "flex-1 px-3 py-2 text-sm font-medium border focus:z-10 focus:ring-2 focus:ring-primary",
-                  isSelected 
-                    ? "bg-primary text-primary-foreground border-primary z-10" 
+                  isSelected
+                    ? "bg-primary text-primary-foreground border-primary z-10"
                     : "bg-background text-foreground hover:bg-muted border-input",
                   isFirst && "rounded-l-md",
                   isLast && "rounded-r-md",

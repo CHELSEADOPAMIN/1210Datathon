@@ -10,9 +10,9 @@ interface DemographicsState {
 export const useDemographicsStore = create<DemographicsState>((set) => ({
   ageRange: [50, 110],
   selectedGenders: [], // Empty means "Select All" logic in UI
-  
+
   setAgeRange: (newRange) => set({ ageRange: newRange }),
-  
+
   toggleGender: (code) =>
     set((state) => {
       const isSelected = state.selectedGenders.includes(code)

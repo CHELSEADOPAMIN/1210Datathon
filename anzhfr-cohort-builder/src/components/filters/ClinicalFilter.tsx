@@ -1,11 +1,8 @@
 "use client"
 
-import * as React from "react"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
-import { Slider } from "@/components/ui/slider"
 import { useClinicalStore } from "@/store/useClinicalStore"
-import { Badge } from "@/components/ui/badge"
 
 export function ClinicalFilter() {
   const {
@@ -44,7 +41,7 @@ export function ClinicalFilter() {
 
   return (
     <div className="space-y-8">
-      
+
       {/* Fracture Type */}
       <div className="space-y-3">
         <Label className="text-sm font-medium">Fracture Type</Label>
@@ -76,8 +73,8 @@ export function ClinicalFilter() {
                 onClick={() => toggleCategoricalFilter('selectedASAGrades', grade)}
                 className={`
                   cursor-pointer px-3 py-1.5 rounded-md text-sm border transition-colors
-                  ${isSelected 
-                    ? "bg-primary text-primary-foreground border-primary font-medium" 
+                  ${isSelected
+                    ? "bg-primary text-primary-foreground border-primary font-medium"
                     : "bg-background hover:bg-muted text-foreground border-input"}
                 `}
               >
@@ -110,15 +107,15 @@ export function ClinicalFilter() {
       {/* Clinical Frailty Scale */}
       <div className="space-y-3">
         <div className="flex items-center justify-between">
-            <Label className="text-sm font-medium">Clinical Frailty Scale</Label>
-            <span className="text-xs text-muted-foreground">(1 = Very Fit)</span>
+          <Label className="text-sm font-medium">Clinical Frailty Scale</Label>
+          <span className="text-xs text-muted-foreground">(1 = Very Fit)</span>
         </div>
-        
+
         <div className="grid grid-cols-5 gap-2">
           {frailtyScores.map((score) => {
-             const isSelected = selectedFrailtyScores.includes(score)
-             return (
-               <div
+            const isSelected = selectedFrailtyScores.includes(score)
+            return (
+              <div
                 key={score}
                 onClick={() => toggleCategoricalFilter('selectedFrailtyScores', score)}
                 className={`
@@ -127,10 +124,10 @@ export function ClinicalFilter() {
                     ? "bg-blue-600 text-white border-blue-600 font-medium"
                     : "bg-white hover:bg-zinc-100 text-zinc-700 border-zinc-200"}
                 `}
-               >
-                 {score}
-               </div>
-             )
+              >
+                {score}
+              </div>
+            )
           })}
         </div>
       </div>
