@@ -21,7 +21,7 @@ export function Sidebar({ className }: { className?: string }) {
   }
 
   return (
-    <aside className={`bg-white border-r overflow-y-auto flex flex-col ${className}`}>
+    <aside className={`bg-white border-r flex flex-col ${className}`}>
       {/* Header */}
       <div className="p-6 pb-4">
         <h2 className="font-semibold text-lg">Cohort Filters</h2>

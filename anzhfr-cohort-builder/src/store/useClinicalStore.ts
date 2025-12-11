@@ -7,6 +7,7 @@ type ClinicalArrayKeys =
   | 'selectedASAGrades'
   | 'selectedPatientTypes'
   | 'selectedFrailtyScores'
+  | 'selectedWeightBearings'
 
 interface ClinicalState {
   // 1. Fracture Type (ftype): '1'-'4'
@@ -24,6 +25,9 @@ interface ClinicalState {
   // 5. Clinical Frailty Scale (frailty/cfs): '1'-'10'
   selectedFrailtyScores: string[]
 
+  // 6. Weight Bearing (wbear): '1'-'3'
+  selectedWeightBearings: string[]
+
   // Hospital Settings
   selectedHospital: string | null
 
@@ -38,6 +42,7 @@ export const useClinicalStore = create<ClinicalState>((set) => ({
   selectedASAGrades: [],
   selectedPatientTypes: [],
   selectedFrailtyScores: [],
+  selectedWeightBearings: [], // Init empty
   selectedHospital: null,
 
   toggleCategoricalFilter: (category, value) =>
@@ -60,4 +65,3 @@ export const useClinicalStore = create<ClinicalState>((set) => ({
 
   setHospital: (code) => set({ selectedHospital: code }),
 }))
-

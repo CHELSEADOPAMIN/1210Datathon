@@ -20,6 +20,17 @@ const cleanString = (value: any): string => {
 // 🧼 大清洗函数：把 CSV 的一行原始数据 (row) 变成干净的 Patient 对象
 export const transformRow = (row: any, index: number): Patient => {
 
+  // Calculate Length of Stay: hdisch_datediff - arrdatetime_datediff
+  const discharge = parseNumber(row.hdisch_datediff);
+  const arrival = parseNumber(row.arrdatetime_datediff);
+
+  let los = -1;
+  if (discharge !== -1 && arrival !== -1) {
+    los = discharge - arrival;
+    // Basic validation: LOS shouldn't be negative, though date diffs might be tricky if data is messy
+    if (los < 0) los = -1;
+  }
+
   return {
     // 给每行数据生成一个 ID，方便 React 渲染
     id: `p-${index}`,
@@ -35,22 +46,26 @@ export const transformRow = (row: any, index: number): Patient => {
     // 对应 ftype
     fractureType: cleanString(row.ftype),
 
-    // 对应 op (你确认 op 是延迟原因)
-    surgeryDelay: cleanString(row.op),
+    // 对应 op (你确认 op 是延迟原因) -> 修正为 delay
+    surgeryDelay: cleanString(row.delay),
 
     // 对应 asa
     asaGrade: cleanString(row.asa),
 
     // 对应 ptype
-    patientType: cleanString(row.ptype), // 修正：这里应该是 rawRow.ptype 还是 row.ptype? 上面参数名是 row，所以这里用 row.ptype
+    patientType: cleanString(row.ptype),
 
     // 对应 frailty (或者叫 cfs，请看你的 CSV 表头确认一下)
     frailtyScore: cleanString(row.frailty),
+
+    // 对应 wbear
+    weightBearing: cleanString(row.wbear),
 
     // 对应 ahos_code
     hospitalCode: cleanString(row.ahos_code),
 
     // 对应 hdisch_datediff (住院时长)
-    lengthOfStay: parseNumber(row.hdisch_datediff)
+    // Updated to calculate difference rather than raw value
+    lengthOfStay: los
   };
 };

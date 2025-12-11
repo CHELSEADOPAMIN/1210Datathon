@@ -82,69 +82,6 @@ export function AdminFilter() {
         </p>
       </div>
 
-      {/* Hospital Selector (Combobox) */}
-      <div className="space-y-3">
-        <Label className="text-sm font-medium">Hospital</Label>
-        <Popover open={open} onOpenChange={setOpen}>
-          <PopoverTrigger asChild>
-            <Button
-              variant="outline"
-              role="combobox"
-              aria-expanded={open}
-              className="w-full justify-between"
-            >
-              {selectedHospital
-                ? hospitals.find((h) => h.value === selectedHospital)?.label
-                : "All Hospitals"}
-              <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent className="w-full p-0">
-            <Command>
-              <CommandInput placeholder="Search hospital..." />
-              <CommandList>
-                <CommandEmpty>No hospital found.</CommandEmpty>
-                <CommandGroup>
-                  <CommandItem
-                    value="all"
-                    onSelect={() => {
-                      setHospital(null)
-                      setOpen(false)
-                    }}
-                  >
-                    <Check
-                      className={cn(
-                        "mr-2 h-4 w-4",
-                        selectedHospital === null ? "opacity-100" : "opacity-0"
-                      )}
-                    />
-                    All Hospitals
-                  </CommandItem>
-                  {hospitals.map((hospital) => (
-                    <CommandItem
-                      key={hospital.value}
-                      value={hospital.label}
-                      onSelect={() => {
-                        setHospital(hospital.value === selectedHospital ? null : hospital.value)
-                        setOpen(false)
-                      }}
-                    >
-                      <Check
-                        className={cn(
-                          "mr-2 h-4 w-4",
-                          selectedHospital === hospital.value ? "opacity-100" : "opacity-0"
-                        )}
-                      />
-                      {hospital.label}
-                    </CommandItem>
-                  ))}
-                </CommandGroup>
-              </CommandList>
-            </Command>
-          </PopoverContent>
-        </Popover>
-      </div>
-
     </div>
   )
 }
