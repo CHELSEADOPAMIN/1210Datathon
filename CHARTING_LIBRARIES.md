@@ -65,7 +65,7 @@ Recharts is a charting library built with React components, which makes it ideal
 For complete tech stack information, please refer to the main README.md file.
 
 **核心技术 / Core Technologies:**
-- Next.js 15 (App Router) + TypeScript
+- Next.js 16 (App Router) + TypeScript
 - Tailwind CSS + Shadcn UI
 - **Recharts** for data visualization
 - PapaParse for CSV parsing
